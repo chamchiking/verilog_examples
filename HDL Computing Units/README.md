@@ -4,6 +4,9 @@
 
 ## Lab1
 
+- How to use Vivado IP integrator to generate a DSP?
+- How to test a DSP unit?
+
 ### creating a DSP using Xilinx IP generator
 
 - click "IP Catalog" on vivado
@@ -27,6 +30,11 @@ P = A*B + C
 
 ## Lab2
 
+- Multipliers and an adder tree
+- MAC
+
+### steps
+
 - Build a MAC
   - Use multiple multipliers
   - Adder tree
@@ -49,3 +57,4 @@ P = A*B + C
 
 ## Lab3
 
+- Use MAC to do a convolutional layer
