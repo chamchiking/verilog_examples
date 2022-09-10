@@ -1,16 +1,5 @@
 `timescale 1ns / 1ps
 
-//------------------------------------------------------------+
-//------------------------------------------------------------+
-// Project: Deep Learning Hardware Design Contest
-// Module: dpram_tb
-// Description:
-//		Dual-port RAM wrapper's testbench
-//		The goal of testbench is to understand the read & write operation of initialized dpram.
-//      
-// History: 2022.02.13 by NXT (truongnx@capp.snu.ac.kr)
-//------------------------------------------------------------+
-
 module dpram_tb();
     
     // system parameters
@@ -34,7 +23,7 @@ module dpram_tb();
 	wire [DW-1:0] dob;			    // output read-out data
     reg [DW-1:0] test_data[15:0];  // test data
     
-    integer i;
+    integer i, j;
     
     initial begin
     
@@ -63,15 +52,6 @@ module dpram_tb();
             @(posedge clk);
         
         #(CLK_HALF_CYCLE) 
-                
-        // ---------- read operation ---------- //
-        for(i=0;i<DEPTH;i=i+1) begin
-            #(8*CLK_HALF_CYCLE)
-            enb = 1'b1;
-            addrb = i;
-            #(4*CLK_HALF_CYCLE) 
-            enb = 1'b0;
-        end
         
         // ---------- write operation ---------- //
         for(i=0;i<16;i=i+1) begin
@@ -86,11 +66,11 @@ module dpram_tb();
         end
         
         // ---------- read operation ---------- //
-        for(i=0;i<DEPTH;i=i+1) begin
+        for(i=0;i< 16;i=i+1) begin
             #(8*CLK_HALF_CYCLE)
             enb = 1'b1;
             addrb = i;
-            #(4*CLK_HALF_CYCLE) 
+            #(2*CLK_HALF_CYCLE) 
             enb = 1'b0;
         end
         

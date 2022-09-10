@@ -1,15 +1,3 @@
-//------------------------------------------------------------+
-//------------------------------------------------------------+
-// Project: Deep Learning Hardware Design Contest
-// Module: dpram_warpper
-// Description:
-//		Dual-port RAM wrapper
-//		FPGA = 1: Use the generated RAM 
-//		Otherwise: Use a RAM modeling
-//
-// History: 2021.09.01 by NXT (truongnx@capp.snu.ac.kr)
-//------------------------------------------------------------+
-
 `define FPGA 1
 module dpram_wrapper (	
 	clk,		// clock 
